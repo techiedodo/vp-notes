@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails',          '5.0.0'
 gem 'bootstrap-sass', '3.3.6'
-gem 'rails',        '5.0.0'
 gem 'puma',         '3.4.0'
 gem 'sass-rails',   '5.0.5'
 gem 'uglifier',     '3.0.0'
@@ -13,6 +12,10 @@ gem 'jbuilder',     '2.4.1'
 gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'hirb', '~> 0.7.3'
 gem 'devise'
+gem 'figaro', '1.0'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'
