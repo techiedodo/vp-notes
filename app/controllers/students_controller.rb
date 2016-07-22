@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+before_action :authenticate_tutor!
+
   def index
     @students = Student.all
   end
@@ -13,7 +15,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(params.require(:student).permit(:name))
-    @student.user = current_user
+    @student.tutor = current_tutor
     if @student.save
       flash[:notice] = "Student was created sucessfully."
       redirect_to @student
