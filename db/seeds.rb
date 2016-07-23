@@ -19,12 +19,12 @@ tutors = Tutor.all
 end
 students = Student.all
 
-# 50.times do
-#   Session.create!(
-#     student: students.sample,
-#     session_name: Faker::Internet.domain_word
-#   )
-# end
+50.times do
+  TutoringSession.create!(
+    student: students.sample,
+    session_date: Faker::Internet.domain_word
+  )
+end
 
 tutor = Tutor.first
 tutor.skip_reconfirmation!

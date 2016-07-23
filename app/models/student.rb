@@ -10,6 +10,6 @@
 #
 
 class Student < ApplicationRecord
-  has_many :sessions
+  has_many :tutoring_sessions
   belongs_to :tutor
 end
