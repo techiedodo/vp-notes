@@ -2,11 +2,12 @@ class StudentsController < ApplicationController
 before_action :authenticate_tutor!
 
   def index
-    @students = Student.all
+    @students = policy_scope(Student)
   end
 
   def show
     @student = Student.find(params[:id])
+    authorize @student
   end
 
   def new
