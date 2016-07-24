@@ -7,6 +7,7 @@ before_action :authenticate_tutor!
 
   def show
     @student = Student.find(params[:id])
+    @sessions = @student.tutoring_sessions
     authorize @student
   end
 

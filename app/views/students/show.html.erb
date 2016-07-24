@@ -1,2 +1,5 @@
 <h1><%= @student.name %></h1>
 <%= link_to "Edit", edit_student_path(@student), class: 'btn btn-success' %>
+<% @sessions.each do |session| %>
+  <%= link_to session.session_date, session %>
+<% end %>

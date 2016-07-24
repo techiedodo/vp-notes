@@ -16,7 +16,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Contact",   contact_path %></li>
-            
+            <li><%= link_to "Students", students_path %></li>
             <div class="pull-right">
               <% if current_tutor %>
                 Hello <%= current_tutor.name %>! <%= link_to "Sign out", destroy_tutor_session_path, method: :delete %>
@@ -25,7 +25,6 @@
                 <%= link_to "Sign Up", new_tutor_registration_path %>
               <% end %>
              </div>
-            
           </ul>
         </nav>
       </div>
@@ -49,6 +48,6 @@
       <% end %>
 
       <%= yield %>
-    </div> 
+    </div>
   </body>
 </html>
