@@ -6,11 +6,11 @@
     <%= link_to "Edit", edit_student_path(@student), class: 'btn btn-success' %>
   </div>
   <div class="col-md-5 col-md-offset-1">
-    <h3>Tutoring Sessions <%= link_to "New Session", new_tutoring_session_path(@session), class: 'btn btn-primary btn-xs' %></h3>
+    <h3>Tutoring Sessions <%= link_to "New Session", new_tutoring_session_path(@session, :student_id => @student), class: 'btn btn-primary btn-xs' %></h3>
     <% @sessions.each do |session| %>
       <ul class="list-group">
         <li class="list-group-item">
-          <span class="badge">4</span>
+          <span class="badge"><%= session.notes.count %></span>
           <%= link_to session.session_date, session %>
           <br>
           <%= link_to "Add Note", '#' %> | <%= link_to "Delete Session", '#' %>
@@ -19,3 +19,4 @@
     <% end %>
   </div>
 </div>
+<%= params.inspect %>

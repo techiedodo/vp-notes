@@ -22,10 +22,25 @@ grades = Array(5..12)
 end
 students = Student.all
 
-50.times do
+150.times do
   TutoringSession.create!(
     student: students.sample,
     session_date: Faker::Internet.domain_word
+  )
+end
+sessions = TutoringSession.all
+
+550.times do
+  Note.create!(
+    tutoring_session: sessions.sample,
+    summary: Faker::Lorem.paragraph(3),
+    achievement: Faker::Lorem.paragraph(3),
+    what_next: Faker::Lorem.paragraph(3),
+    recommendation: Faker::Lorem.paragraph(3),
+    rate: Faker::Number.number(2),
+    date_session: Faker::Time.between(DateTime.now - 1, DateTime.now),
+    tm_start: Time.now-(60*60),
+    tm_end: Time.now+(60*60)
   )
 end
 
@@ -47,3 +62,5 @@ second.update_attributes!(
 puts "Seed Finished"
 puts "#{Tutor.count} tutors created"
 puts "#{Student.count} students created"
+puts "#{TutoringSession.count} sessions created"
+puts "#{Note.count} notes created"

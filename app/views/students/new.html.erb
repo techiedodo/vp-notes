@@ -1,13 +1,18 @@
 <h1>Create a new Student</h1>
 <div class="row">
-  <div class="col-md-6 col-offset-md-3">
+  <div class="col-md-6 col-md-offset-3">
     <%= form_for @student do |f| %>
       <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control', placeholder: "Student's Name" %>
+        <%= f.label :biography %>
+        <%= f.text_area :biography, class: 'form-control', placeholder: "Brief Student Biography" %>
+        <%= f.label :grade %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Student's Grade" %>
       </div>
       <div class="form-group">
         <%= f.submit "Save", class: 'btn btn-success' %>
+        <%= link_to "Cancel", :back, {:class=>"btn btn-danger"} %>
       </div>
     <% end %>
   </div>

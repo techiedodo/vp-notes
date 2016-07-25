@@ -1,2 +1,36 @@
-<h1>TutoringSessions#show</h1>
-<p>Find me in app/views/tutoring_sessions/show.html.erb</p>
+<h1>Session: <%=@session.session_date %> </h1>
+<%= link_to "Edit", edit_tutoring_session_path(@session), class: 'btn btn-success' %>
+<%= link_to "New Note", '#', class: 'btn btn-primary' %>
+<%= link_to "Student Sessions", student_path(@session.student), class: 'btn btn-primary' %>
+
+<hr>
+<% @notes.each do |note| %>
+<ul>
+  <li>
+    Date of Session: <br><%= note.date_session %>
+  </li>
+  <li>
+    Summary Statement: <br><%= note.summary %>
+  </li>
+  <li>
+    What We've Achieved: <br><%= note.achievement %>
+  </li>
+  <li>
+    What Comes Next: <br><%= note.what_next %>
+  </li>
+  <li>
+    Recommendations: <br><%= note.recommendation %>
+  </li>
+  <li>
+    Rate: <br><%= note.rate %>
+  </li>
+  <li>
+    Tutoring Start Time: <br><%= note.tm_start %>
+  </li>
+  <li>
+    Tutoring Start Time: <br><%= note.tm_start %>
+  </li>
+</ul>
+<hr>
+<% end %>
+<%= params.inspect %>

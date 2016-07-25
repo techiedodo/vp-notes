@@ -7,6 +7,8 @@
 #  tutor_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  grade      :string
+#  biography  :text
 #
 
 class Student < ApplicationRecord

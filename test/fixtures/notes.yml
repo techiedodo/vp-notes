@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: notes
+#
+#  id                  :integer          not null, primary key
+#  summary             :text
+#  achievement         :text
+#  what_next           :text
+#  recommendation      :text
+#  rate                :integer
+#  date_session        :date
+#  tm_start            :time
+#  tm_end              :time
+#  tutoring_session_id :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  summary: MyText
+  achievement: MyText
+  what_next: MyText
+  recommendation: MyText
+  rate: 1
+  date_session: 2016-07-24
+  tm_start: 2016-07-24 17:33:15
+  tm_end: 2016-07-24 17:33:15
+  tutoring_session: one
+
+two:
+  summary: MyText
+  achievement: MyText
+  what_next: MyText
+  recommendation: MyText
+  rate: 1
+  date_session: 2016-07-24
+  tm_start: 2016-07-24 17:33:15
+  tm_end: 2016-07-24 17:33:15
+  tutoring_session: two
