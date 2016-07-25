@@ -10,11 +10,14 @@ require 'faker'
   tutor.save!
 end
 tutors = Tutor.all
+grades = Array(5..12)
 
 30.times do
   Student.create!(
     tutor: tutors.sample,
-    name: Faker::Name.name
+    name: Faker::Name.name,
+    grade: grades.sample,
+    biography: Faker::Lorem.paragraph(3)
   )
 end
 students = Student.all
