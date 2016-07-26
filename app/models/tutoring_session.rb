@@ -12,4 +12,5 @@
 class TutoringSession < ApplicationRecord
   belongs_to :student
   has_many :notes
+  default_scope { order('created_at DESC')}
 end

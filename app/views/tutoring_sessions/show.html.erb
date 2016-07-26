@@ -1,6 +1,6 @@
 <h1>Session: <%=@session.session_date %> </h1>
 <%= link_to "Edit", edit_tutoring_session_path(@session), class: 'btn btn-success' %>
-<%= link_to "New Note", '#', class: 'btn btn-primary' %>
+<%= link_to "New Note", new_note_path, class: 'btn btn-primary' %>
 <%= link_to "Student Sessions", student_path(@session.student), class: 'btn btn-primary' %>
 
 <hr>

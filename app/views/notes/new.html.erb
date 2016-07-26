@@ -1,0 +1,44 @@
+<h1>Add A New Note</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @note do |f| %>
+      <div class="form-group">
+        <%= f.label :summary %>
+        <%= f.text_area :summary, class: 'form-control', placeholder: "Summary Statement" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :achievement %>
+        <%= f.text_area :achievement, class: 'form-control', placeholder: "What We've Achieved" %>
+      </div>
+      <div class="form-group">
+        <%= f.label 'What Comes Next' %>
+        <%= f.text_area :what_next, class: 'form-control', placeholder: "What Comes Next" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :recommendation %>
+        <%= f.text_area :recommendation, class: 'form-control', placeholder: "Recommendations" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :date_session %>
+        <%= f.date_select :date_session, class: 'form-control', placeholder: "StudentLastName_TutorLastName SessionEndDate" %>
+      </div>
+      <div class="form-group">
+        <%= f.label 'Start' %>
+        <%= f.time_select  :tm_start, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label 'End' %>
+        <%= f.time_select :tm_end, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :rate %>
+        <%= f.number_field :rate, class: 'form-control', placeholder: "Session Rate" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+        <%= link_to "Cancel", :back, {:class=>"btn btn-danger"} %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= params.inspect %>
