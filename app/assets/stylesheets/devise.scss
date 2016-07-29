@@ -1,8 +1,11 @@
 .top-wrapper{
+  h2 {
+    color: white;
+  }
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(rgba(1,135,179,.5),rgba(1,15,19,.5)), url(empty_room.jpeg) center center ;
+  background: linear-gradient(rgba(1,135,179,.5),rgba(1,15,19,.25)), url(empty_room.jpg) center center ;
   background-size: cover;
   .wrapper {
     position: relative;
