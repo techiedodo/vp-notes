@@ -1,22 +1,24 @@
-<div class="row">
-  <div class="col-md-6">
-    <h1><%= @student.name %></h1>
-    <h4>Current Grade: <%= @student.grade %></h4>
-    <p><%= @student.biography %></p>
-    <%= link_to "Edit", edit_student_path(@student), class: 'btn btn-success' %>
+<div class="wrapper-main">
+  <div class="row">
+    <div class="col-md-6">
+      <h1><%= @student.name %></h1>
+      <h4>Current Grade: <%= @student.grade %></h4>
+      <p><%= @student.biography %></p>
+      <%= link_to "Edit", edit_student_path(@student), class: 'btn btn-success' %>
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+      <h3>Tutoring Sessions <%= link_to "New Session", new_tutoring_session_path(@session, :student_id => @student), class: 'btn btn-primary btn-xs' %></h3>
+      <% @sessions.each do |session| %>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span class="badge"><%= session.notes.count %></span>
+            <%= link_to session.session_date, session %>
+            <br>
+            <%= link_to "Add New Note", new_note_path(@note, :tutoring_session_id => session.id) %> | <%= link_to "Delete Session", '#' %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
   </div>
-  <div class="col-md-5 col-md-offset-1">
-    <h3>Tutoring Sessions <%= link_to "New Session", new_tutoring_session_path(@session, :student_id => @student), class: 'btn btn-primary btn-xs' %></h3>
-    <% @sessions.each do |session| %>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <span class="badge"><%= session.notes.count %></span>
-          <%= link_to session.session_date, session %>
-          <br>
-          <%= link_to "Add Note", new_note_path %> | <%= link_to "Delete Session", '#' %>
-        </li>
-      </ul>
-    <% end %>
-  </div>
+  <%= params.inspect %>
 </div>
-<%= params.inspect %>

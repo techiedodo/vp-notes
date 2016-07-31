@@ -2,6 +2,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @note do |f| %>
+      <%= f.hidden_field :tutoring_session_id, :value => @session.id %>
       <div class="form-group">
         <%= f.label :summary %>
         <%= f.text_area :summary, class: 'form-control', placeholder: "Summary Statement" %>
