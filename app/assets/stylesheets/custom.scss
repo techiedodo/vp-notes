@@ -1,13 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+body {
+  font-family: 'Raleway', sans-serif;
+  #logo {
+  width: 5em;
+  padding: .5em .5em;
+  }
+  .brand-text {
+  font-size: 1.3em;
+  }
+}
+
 #main-content {
   padding: 0;
   .wrapper-main{
-    padding-top: 4em;
+    padding-top: 4.5em;
     padding-left: 2em;
     padding-right: 2em;
     margin: 0 auto;
     max-width: 1150px;
+    max-height: 90vh;
   }
 }

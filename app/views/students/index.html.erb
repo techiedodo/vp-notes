@@ -1,13 +1,21 @@
 <div class="wrapper-main">
   <h1>All Students</h1>
-  <%@students.each do |student| %>
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-            <%= link_to student.name, student %>
-            <%= student.tutoring_sessions.count %>
-        </h4>
-      </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%@students.each do |student| %>
+        <div class="media">
+          <div class="media-body">
+            <h3 class="media-heading">
+                <%= link_to student.name, student %> <br>
+                <p>
+                Number of Sessions: <%= student.tutoring_sessions.count %>
+                </p>
+                <hr>
+            </h3>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
