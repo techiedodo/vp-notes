@@ -4,14 +4,14 @@
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
 
-    <link href='https://fonts.googleapis.com/css?family=Raleway|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway|Open+Sans' rel='stylesheet' type='text/css'>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-default">
+    <header class="navbar navbar-fixed-top navbar-default" id="header-main">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -22,9 +22,8 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to image_tag('travel.png',  id: "logo"), root_path%>
-          <%= link_to "Tut-Notes", root_path, class: "brand-text"%>
+          <%= link_to "Tutor-Notes", root_path, class: "brand-text"%>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
@@ -43,10 +42,6 @@
              </div>
           </ul>
         </div>
-
-
-
-
       </div>
     </header>
     <div class="container-fluid" id="main-content">
@@ -69,5 +64,8 @@
 
       <%= yield %>
     </div>
+  <footer class="navbar-fixed-bottom text-center">
+    <p id="footer-text">TechieDodo &copy; 2016 | Adapt and Fly</p>
+  </footer>
   </body>
 </html>

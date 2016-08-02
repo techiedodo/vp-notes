@@ -1,11 +1,14 @@
-<% provide(:title, "Home") %>
-<div class="row" id="hero">
-  <div class="col-md-6 col-md-offset-1">
-    <h1>Welcome to VP Tut-Notes</h1>
-    <p> Free-up some time. Spend it working with the kids and not on paperwork.</p>
-  </div>
-  <div class="col-md-4">
-    <h1>Please Login</h1>
+<div class="wrapper-main">
+  <% provide(:title, "Home") %>
+  <div class="row" id="hero">
+    <div class="col-md-5 col-md-offset-1 text-center">
+      <h1>Welcome to VP Tut-Notes</h1>
+      <p> Free-up some time. Spend it working with the kids and not on paperwork.</p>
+      <%= image_tag('login-pc.png', id: 'login-logo') %>
+    </div>
+    <div class="col-md-4 col-md-offset-1 text-center" id="login-section">
+      <h1>Please Login</h1>
+      <%= link_to "Sign In", new_tutor_session_path, class: "btn btn-info" %>
+    </div>
   </div>
 </div>
-
