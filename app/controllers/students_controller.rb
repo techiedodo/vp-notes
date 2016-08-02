@@ -17,7 +17,7 @@ before_action :authenticate_tutor!
   end
 
   def create
-    @student = Student.new(params.require(:student).permit(:name))
+    @student = Student.new(params.require(:student).permit(:name, :grade, :biography))
     @student.tutor = current_tutor
     authorize @student
     if @student.save
@@ -37,7 +37,7 @@ before_action :authenticate_tutor!
   def update
     @student = Student.find(params[:id])
     authorize @student
-    if @student.update_attributes(params.require(:student).permit(:name))
+    if @student.update_attributes(params.require(:student).permit(:name, :grade, :biography))
       flash[:notice] = "Student name updated."
       redirect_to @student
     else
