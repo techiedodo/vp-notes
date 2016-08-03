@@ -18,5 +18,15 @@
 
 class Note < ApplicationRecord
   belongs_to :tutoring_session
+
+  # validates :summary, length: {minimum: 30}, presence: true
+  # validates :achievement, length: {minimum: 30}, presence: true
+  # validates :what_next, length: {minimum: 30}, presence: true
+  # validates :recommendation, length: {minimum: 30}, presence: true
+  # validates :rate, presence: true
+  # # validates :date_session, presence: true
+  # # validates :tm_start, presence: true
+  # # validates :tm_end, presence: true
+  # # validates :tutoring_session_id, presence: true
   default_scope { order('created_at DESC')}
 end

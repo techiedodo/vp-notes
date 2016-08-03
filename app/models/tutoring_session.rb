@@ -12,5 +12,7 @@
 class TutoringSession < ApplicationRecord
   belongs_to :student
   has_many :notes
+
+  validates :session_date, presence: true
   default_scope { order('created_at DESC')}
 end

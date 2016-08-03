@@ -45,4 +45,18 @@ before_action :authenticate_tutor!
       render :edit
     end
   end
+
+  def destroy
+    @student = Student.find(params[:id])
+
+    authorize @student
+    if @student.destroy
+      flash[:notice] = "\"#{@student.name}\" was deleted successfully."
+      redirect_to students_path
+    else
+      flash[:error] = "There was an error deleting the student."
+      render :show
+    end
+  end
+  
 end

@@ -12,6 +12,12 @@
 #
 
 class Student < ApplicationRecord
-  has_many :tutoring_sessions
+  has_many :tutoring_sessions, dependent: :destroy
   belongs_to :tutor
+
+  validates :name, length: {minimum: 5}, presence: true
+  validates :grade, presence: true
+  validates :biography, length: {minimum: 10}, presence: true
+
+  default_scope { order('students.name ASC')}
 end

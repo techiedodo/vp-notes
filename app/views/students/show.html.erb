@@ -4,7 +4,8 @@
       <h1><%= @student.name %></h1>
       <h4>Current Grade: <%= @student.grade %></h4>
       <p><%= @student.biography %></p>
-      <%= link_to "Edit", edit_student_path(@student), class: 'btn btn-success' %>
+      <%= link_to "Edit", edit_student_path(@student), class: 'btn btn-success btn-xs' %>
+      <%= link_to "Delete Student", @student, method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: 'Are you sure that you want to delete this student?'} %>
     </div>
     <div class="col-md-5 col-md-offset-1">
       <h3>Tutoring Sessions <%= link_to "New Session", new_tutoring_session_path(@session, :student_id => @student), class: 'btn btn-primary btn-xs' %></h3>
