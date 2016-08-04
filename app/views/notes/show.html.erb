@@ -1,37 +1,51 @@
 <div class="wrapper-main">
   <ul>
     <li>
-      Date of Session: <br><%= @note.date_session %>
+      Date of Session:
+      <br><%= @note.date_session %>
     </li>
     <li>
-      Summary Statement: <br><%= @note.summary %>
+      Summary Statement:
+      <br><%= @note.summary %>
     </li>
     <li>
-      What We've Achieved: <br><%= @note.achievement %>
+      What We've Achieved:
+      <br><%= @note.achievement %>
     </li>
     <li>
-      What Comes Next: <br><%= @note.what_next %>
+      What Comes Next:
+      <br><%= @note.what_next %>
     </li>
     <li>
-      Recommendations: <br><%= @note.recommendation %>
+      Recommendations:
+      <br><%= @note.recommendation %>
     </li>
     <li>
-      Rate: <br><%= @note.rate %>
+      Rate:
+      <br><%= @note.rate %>
     </li>
     <li>
-      Tutoring Start Time: <br><%= @note.tm_start %>
+      Tutoring Start Time:
+      <br><%= @note.tm_start %>
     </li>
     <li>
-      Tutoring Start Time: <br><%= @note.tm_end %>
+      Tutoring Start Time:
+      <br><%= @note.tm_end %>
     </li>
     <li>
-      Elapsed Time: <br><%= (@note.tm_end - @note.tm_start)/3600 %> Hrs.
+      Elapsed Time:
+      <br><%= (@note.tm_end - @note.tm_start)/3600 %>
+      Hrs.
     </li>
     <li>
-      Session Total: <br>$<%= ((@note.tm_end - @note.tm_start)/3600)*@note.rate %> Hrs.
+      Session Total:
+      <br>$<%= ((@note.tm_end - @note.tm_start)/3600)*@note.rate %>
+      Hrs.
     </li>
-    <%= link_to "Notes List", '#' %> |
-    <%= link_to "Edit", edit_note_path %> |
+    <%= link_to "Notes List", @note.tutoring_session %>
+    |
+    <%= link_to "Edit", edit_note_path %>
+    |
     <%= link_to "Delete", '#' %>
   </ul>
   <hr>

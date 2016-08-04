@@ -1,37 +1,49 @@
 <div class="wrapper-main">
-  <h1>Session: <%=@session.session_date %> </h1>
-  <%= link_to "Edit", edit_tutoring_session_path(@session), class: 'btn btn-success' %>
-  <%= link_to "New Note", new_note_path(@note, :tutoring_session_id => @session), class: 'btn btn-primary' %>
-  <%= link_to "Student Sessions", student_path(@session.student), class: 'btn btn-primary' %>
+  <h1>Session:
+    <%=@session.session_date %>
+  </h1>
+  <%= link_to "Edit", edit_tutoring_session_path(@session), class: 'btn btn-success btn-xs' %>
+  <%= link_to "Delete Session", @session, method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: 'Are you sure that you want to delete this session?'} %>
+  <%= link_to "New Note", new_note_path(@note, :tutoring_session_id => @session), class: 'btn btn-primary btn-xs' %>
+  <%= link_to "Student Sessions", student_path(@session.student), class: 'btn btn-primary btn-xs' %>
 
   <hr>
   <% @notes.each do |note| %>
   <ul>
-    <%= link_to "Edit", edit_note_path(note.id, :tutoring_session_id => @session) %> |
+    <%= link_to "Edit", edit_note_path(note.id, :tutoring_session_id => @session) %>
+    |
     <%= link_to "Delete", '#' %>
     <li>
-      Date of Session: <br><%= note.date_session %>
+      Date of Session:
+      <br><%= note.date_session %>
     </li>
     <li>
-      Summary Statement: <br><%= note.summary %>
+      Summary Statement:
+      <br><%= note.summary %>
     </li>
     <li>
-      What We've Achieved: <br><%= note.achievement %>
+      What We've Achieved:
+      <br><%= note.achievement %>
     </li>
     <li>
-      What Comes Next: <br><%= note.what_next %>
+      What Comes Next:
+      <br><%= note.what_next %>
     </li>
     <li>
-      Recommendations: <br><%= note.recommendation %>
+      Recommendations:
+      <br><%= note.recommendation %>
     </li>
     <li>
-      Rate: <br><%= note.rate %>
+      Rate:
+      <br><%= note.rate %>
     </li>
     <li>
-      Tutoring Start Time: <br><%= note.tm_start %>
+      Tutoring Start Time:
+      <br><%= note.tm_start %>
     </li>
     <li>
-      Tutoring End Time: <br><%= note.tm_end %>
+      Tutoring End Time:
+      <br><%= note.tm_end %>
     </li>
   </ul>
   <hr>

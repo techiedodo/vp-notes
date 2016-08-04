@@ -48,7 +48,6 @@ before_action :authenticate_tutor!
 
   def destroy
     @student = Student.find(params[:id])
-
     authorize @student
     if @student.destroy
       flash[:notice] = "\"#{@student.name}\" was deleted successfully."
@@ -58,5 +57,5 @@ before_action :authenticate_tutor!
       render :show
     end
   end
-  
+
 end

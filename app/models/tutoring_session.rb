@@ -11,7 +11,7 @@
 
 class TutoringSession < ApplicationRecord
   belongs_to :student
-  has_many :notes
+  has_many :notes, dependent: :destroy
 
   validates :session_date, presence: true
   default_scope { order('created_at DESC')}

@@ -27,5 +27,29 @@ class TutoringSessionsController < ApplicationController
   end
 
   def edit
+    @session = TutoringSession.find(params[:id])
   end
+
+  def update
+    @session = TutoringSession.find(params[:id])
+    if @session.update_attributes(params.require(:tutoring_session).permit(:session_date, :student_id))
+      flash[:notice] = "Session updated."
+      redirect_to @session
+    else
+      flash[:error] = "We were not able to update the session. Please try again."
+      render :edit
+    end
+  end
+
+  def destroy
+    @session = TutoringSession.find(params[:id])
+    if @session.destroy
+      flash[:notice] = "\"#{@session.session_date}\" was deleted successfully."
+      redirect_to @session.student
+    else
+      flash[:error] = "There was an error deleting the session. Please try again."
+      render :show
+    end
+  end
+
 end
