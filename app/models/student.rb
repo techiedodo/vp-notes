@@ -13,6 +13,7 @@
 
 class Student < ApplicationRecord
   has_many :tutoring_sessions, dependent: :destroy
+  has_many :notes, through: :tutoring_sessions
   belongs_to :tutor
 
   validates :name, length: {minimum: 5}, presence: true
